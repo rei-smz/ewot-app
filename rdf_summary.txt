@@ -1,0 +1,62 @@
+RDF Predicate Summary (for MCP resource)
+
+Total distinct predicates: 36
+Total predicate occurrences (sum across predicates): 2962
+
+Namespace composition (by total occurrences):
+- map: 1155 (39.0%)
+- rdf: 630 (21.3%)
+- wot: 450 (15.2%)
+- core: 420 (14.2%)
+- wurvoc: 105 (3.5%)
+- sosa: 105 (3.5%)
+- rdfs: 82 (2.8%)
+- foaf: 6 (0.2%)
+- proton.semanticweb.org: 5 (0.2%)
+- www.w3.org: 4 (0.1%)
+
+Top predicates:
+1. rdf:type — 630 (21.3%)
+2. map:hasMapping — 315 (10.6%)
+3. map:predicate — 315 (10.6%)
+4. map:jsonPath — 210 (7.1%)
+5. core:hasValue — 105 (3.5%)
+6. wot:isWritable — 105 (3.5%)
+7. wot:interactionName — 105 (3.5%)
+8. wurvoc:Unit_of_measure — 105 (3.5%)
+9. wot:isAccessibleThrough — 105 (3.5%)
+10. sosa:observes — 105 (3.5%)
+11. core:isDescribedBy — 105 (3.5%)
+12. map:mapsResourceFrom — 105 (3.5%)
+13. map:hasAccessMapping — 105 (3.5%)
+14. core:describes — 105 (3.5%)
+15. map:targetClass — 105 (3.5%)
+16. wot:providesInteractionPattern — 105 (3.5%)
+17. rdfs:subPropertyOf — 39 (1.3%)
+18. core:isLocatedAt — 30 (1.0%)
+19. rdfs:label — 22 (0.7%)
+20. core:serialNumber — 15 (0.5%)
+
+Practical guidance for SPARQL generation:
+- Always include the fixed prefixes (see your system prompt) verbatim at the top of the query.
+- Add rdf:type constraints early; this graph appears to expose rich typing and mapping metadata.
+- Mapping-related predicates (e.g., map:*) are frequent; use them when navigating from device data to RDF views.
+- When the question is about observations/sensors, prefer sosa:* / ssn:* anchors, and include time/feature constraints as needed.
+- Use FILTER on datatypes (xsd:*) for numeric comparisons; include LIMIT/ORDER BY for result hygiene.
+- When unsure, wrap non-essential patterns in OPTIONAL { ... } to reduce empty-result risk.
+
+Fixed prefixes used in this graph:
+prefix wot: <http://iot.linkeddata.es/def/wot#>
+prefix core: <http://iot.linkeddata.es/def/core#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+prefix sosa: <http://www.w3.org/ns/sosa/>
+prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+prefix ssn: <http://www.w3.org/ns/ssn/>
+prefix adp: <http://iot.linkeddata.es/def/adapters#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix map: <http://iot.linkeddata.es/def/wot-mappings#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix saref4bldg: <https://w3id.org/def/saref4bldg#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix s4city: <https://w3id.org/def/saref4city#>
+prefix wurvoc: <http://www.wurvoc.org/vocabularies/om-1.8/>
